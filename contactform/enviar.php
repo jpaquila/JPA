@@ -4,15 +4,12 @@ $correo =  $_POST['correo'];
 $asunto=  $_POST['asunto'];
 $mensaje =  $_POST['mensaje'];
 
-$destinatario = "jpaquila@gmail.com";
+$to="jpaquila@gmail.com";
 
-$carta = "De: $nombre \n";
-$carta .= "Correo: $correo \n";
-$carta .= "Asunto: $asunto \n";
-$carta .= "Mensaje: $mensaje";
+$headers .= "To: $to" . "\r\n";
+$headers .= "From: $nombre <$correo>" . "\r\n";
 
-//envio
-mail($destinatario, $asunto, $carta);
-header('Location:mensaje-de-envio.html')
+mail($to,$asunto,$mensaje, $headers);
+// header('Location:mensaje-de-envio.html')
 
 ?>

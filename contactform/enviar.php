@@ -10,6 +10,5 @@ $headers .= "To: $to" . "\r\n";
 $headers .= "From: $nombre <$correo>" . "\r\n";
 
 mail($to,$asunto,$mensaje, $headers);
-// header('Location:mensaje-de-envio.html')
-
+header('Location:mensaje-de-envio.html')
 ?>
